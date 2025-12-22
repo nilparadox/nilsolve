@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nilsolve"
+version = "0.1.0"
+description = "Lab-grade nonlinear dynamics toolkit: stiff ODE solving + scans + continuation"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Nilanjan Panda"}]
+dependencies = [
+  "numpy>=1.23",
+  "scipy>=1.9",
+  "typer>=0.9",
+  "rich>=13.0",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.7"]
+dev = ["pytest>=7.4", "ruff>=0.5", "mypy>=1.6"]
+
+[project.scripts]
+nilsolve = "nilsolve.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

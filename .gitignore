@@ -1,0 +1,20 @@
+# Python environments
+.venv/
+UNKNOWN.egg-info/
+*.egg-info/
+
+# Generated outputs
+outputs/
+*_report.json
+nilsolve_report.json
+
+# Local dev scripts / models (keep local; add later as examples/)
+mymodel_*.py
+setup.py
+
+# Bytecode
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
